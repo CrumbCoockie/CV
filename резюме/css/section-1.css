@@ -1,0 +1,26 @@
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*gap: var(--mob-padding)*/
+
+}
+.col {
+
+}
+.col-1 {
+    width: 40%;
+
+}
+.col-2 {
+
+}
+
+.col img {
+    display: block;
+    width: 100%;
+
+}
+@media screen and (max-width: 767px) {
+    
+}

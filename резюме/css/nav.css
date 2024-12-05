@@ -1,0 +1,203 @@
+nav {
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 95;
+}
+
+nav::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform .1s ease;
+}
+
+nav.topfixed::before {
+    transform: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;  /* Центрування блоку всередині nav по-горизонталі */
+    margin-right: auto; /* Центрування блоку всередині nav по-горизонталі */
+    max-width: var(--max-width);  /* Ширина .nav-inside не більше 1280px */
+    padding: 30px var(--mob-padding); /* Внутрішні відступи */
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.topfixed .navbar {
+    justify-content: space-between;
+    border-bottom-left-radius: var(--bord-radius);
+    border-bottom-right-radius: var(--bord-radius);
+    background-image: url(../img/image-in-top.jpg);
+    background-color: rgba(10,10,10,.5);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    padding: 12px var(--mob-padding); /* Внутрішні відступи */
+}
+
+.logo {
+    transform: scale(0);
+    width:0;
+    height:0;
+    opacity: 0;
+    align-items: center; /* Вирівнювання по додатковій осі */
+    transition: all .3s ease-in-out;
+}
+
+.topfixed .logo {
+    transform: none;
+    width:auto;
+    height:auto;
+    opacity: 1;
+    display: flex;
+    align-items: center; /* Вирівнювання по додатковій осі */
+}
+
+.logo .img-box {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 55px;
+    margin-right: 12px;
+    /* line-height: .7; */
+}
+.img-box img,
+.img-box svg {
+    display: block; /* Зробити елемент блочним */
+    width: 100%;
+    max-width: 100%;
+}
+.logo span {
+    color: #fff;
+    font-size: .8rem; /* 0.85 * font-size body */
+    line-height: 1.4;
+    letter-spacing: .035em;
+    font-weight: 600;
+    text-transform: uppercase;
+    max-width: 80px;
+}
+
+nav .navbar {
+    overflow: visible;
+}
+
+.nav-icon {
+    display: none;
+    z-index: 99;
+}
+
+.navigation a {
+    display: block;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    padding: 8px 0 18px;
+    margin-left: 32px;
+    text-decoration: none;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.navigation a:hover {
+    color: var(--nav-color-2);
+}
+
+.navigation .level_1 {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.level_1 a {
+    color: var(--nav-color-1);
+    padding: 5px 5px;
+    text-decoration: none;
+}
+
+.level_1 a:hover {
+    color: var(--nav-color-2);
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+
+.overlay {
+    background-color: #333;
+    opacity:.3;
+    position: absolute;
+    left:0; top:0;
+    width:100dvw;
+    height:100dvh;
+}
+
+@media screen and (max-width: 960px) {
+
+    .topfixed .navbar {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .navigation ul {
+        background-color: var(--bg-nav);
+        display: flex;
+        flex-direction: column;
+        visibility: visible;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 70vw; /* 70% from Viewport width */
+        height: 100dvh; /* 100% Dynamic viewport height */
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 80px;
+        transform: translateX(100%);
+        transition: transform .35s ease;
+    }
+
+    .open .navigation ul {
+        transform: translateX(0);
+    }
+
+    .open ul li {
+        /* display: block; */
+        width: 100%;
+        border-bottom: 1px solid #333;
+        margin-left: 0;
+    }
+
+    .open ul a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+}
