@@ -1,0 +1,61 @@
+*,
+*:before,                   /* Для всіх елементів та для всіх псевдоелементів before та after */
+*:after {
+    box-sizing: border-box; /* В ширину блочних елементів вкл. padding та border */
+    margin:0;               /* Зовнішні та внутрішні відступи = 0 */
+    padding:0;
+}
+
+/* Початок блоку змінних проєкту */
+:root {
+    --bg-color-1:  #fff;
+    --bg-color-2:  #ccc;
+    --bg-nav:      #111;
+    --lnk-color-1: #333;
+    --lnk-color-2: #333;
+    --txt-color-1: #333;
+    --txt-color-2: #333;
+    --nav-color-1: #fff;
+    --nav-color-2: #fb7;
+    --max-width:   960px;
+    --mob-padding: 20px;
+    --bord-radius: 20px;
+}
+/* Кінець блоку змінних проєкту */
+
+.wrapper {
+    display: flex;
+    flex-direction:column;
+    min-height: 100dvh;
+    margin-left: auto;  /* Центрування блочного елементу по-горизонталі */
+    margin-right: auto; /* Центрування блочного елементу по-горизонталі */
+    padding: 0;         /* Внутнішній відступ для блочного елементу */
+    position: relative;
+}
+
+.container {
+    padding-left: var(--mob-padding);
+    padding-right: var(--mob-padding);
+    min-height: 50dvh;  /* УВАГА!!! Забрати після завершення верстки */
+}
+
+.container > .inside {  /* Direct child .inside in .container */
+    margin: auto;       /* Центрування по-горизонталі */
+    padding-top: 100px;
+    padding-bottom: 100px;
+    max-width: var(--max-width);
+}
+
+header.container > .inside {  
+    padding-top: 0;
+}
+
+footer {
+    margin-top: auto;
+    min-height: 100px;
+}
+
+/* *************************************************************** */
+
+
+/* *************************************************************** */

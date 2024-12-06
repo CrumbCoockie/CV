@@ -1,0 +1,331 @@
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;        /* Розмір шрифта */
+    line-height: 1.4;       /* Міжрядковий інтервал в % */
+    letter-spacing: .002em; /* міжлітерний інтервал збільшений на 2/1000 Em */
+    scroll-behavior: smooth;/* Плавна прокрутка під час переходу за якорем */
+    background-color: #ffffff; /* Задає колір фону */
+    color: #000000; /* Колір тексту */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.005em;
+    line-height: 1.2;
+    margin: 0 0 .5em;
+    text-align: center;
+}
+
+h1 { font-size: 2rem; } /* rem - віносний розмір 2x16px=32px (body font-size) */
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.35rem; }
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--mob-padding);
+}
+
+
+h2:before,
+h2:after {
+    display: inline-block;
+    content: '';
+    border-top: 1px solid var(--bg-color-2);
+    width: 100%;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: .75em;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-box img {
+    display: block;
+    width: 100%;
+}
+
+/* *************************************************************** */
+
+/* *************************************************************** */
+
+#s2 .two-columns {
+    display: flex; /* Використовується flexbox для управління двома колонками */
+    gap: 30px; /* Відстань між колонками */
+}
+
+#s2 .column {
+    flex: 1; /* Обидві колонки займають однакову ширину */
+}
+
+#s2 .column h3 {
+    font-size: 1.2rem; /* Розмір заголовка кожної колонки */
+    margin-bottom: 15px; /* Відступ між заголовком і списком */
+    text-align: left; /* Вирівнювання заголовка */
+}
+
+#s2 .column ul {
+    list-style: none; /* Прибирає маркери списку */
+    padding: 0;
+    margin: 0;
+}
+
+#s2 .column ul li {
+    margin-bottom: 10px; /* Відступ між елементами списку */
+    font-size: 1rem; /* Розмір тексту елементів списку */
+    line-height: 1.6; /* Поліпшення читабельності */
+}
+
+/* *************************************************************** */
+
+#s1 .about-me {
+    display: flex; /* Використовується flexbox для розташування фото і тексту поруч */
+    gap: 20px; /* Відстань між зображенням і текстом */
+    align-items: left; /* Вирівнювання по вертикалі */
+    margin-top: 20px;
+}
+
+#s1 .about-me .image img {
+    width: 200px; /* Ширина зображення */
+    height: 200px; /* Висота зображення */
+    object-fit: cover; /* Обрізання зображення для збереження пропорцій */
+    border-radius: 10%; /* Робимо фото круглим */
+    border: 2px solid #ffffff; /* Додаємо рамку до зображення */
+}
+
+#s1 .about-me .details {
+    flex: 1; /* Текст займає решту доступного простору */
+}
+
+#s1 .about-me .details h3 {
+    margin-bottom: 10px; /* Відступ між ім'ям і даними */
+    font-size: 1.5rem; /* Розмір тексту імені */
+}
+
+/* Секція портфоліо */
+#s3 {
+    text-align: center;
+    margin: 50px 0;
+}
+
+/* Загальні стилі для контейнера Swiper */
+.swiper {
+    width: 100%;
+    max-width: 800px; /* Максимальна ширина */
+    height: 500px; /* Висота слайдера */
+    margin: 0 auto; /* Центрування */
+    padding: 20px 0; /* Відступи зверху та знизу */
+    position: relative; /* Для кнопок і пагінації */
+    overflow: hidden; /* Заборона прокрутки контенту */
+}
+
+/* Слайди */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4; /* Фоновий колір слайда */
+    text-align: center; /* Центрування тексту, якщо є */
+}
+
+.swiper-slide img {
+    width: 100%;
+    max-width: 600px; /* Максимальна ширина зображення */
+    height: auto;
+    border-radius: 10px; /* Закруглення країв */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легка тінь */
+}
+
+/* Навігаційні кнопки */
+.swiper-button-next,
+.swiper-button-prev {
+    width: 44px;
+    height: 44px;
+    color: #333; /* Колір іконок */
+    background: rgba(255, 255, 255, 0.8); /* Напівпрозоре тло */
+    border-radius: 50%; /* Круглі кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь */
+    z-index: 1000; /* На передньому плані */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: #333; /* Темний фон при наведенні */
+    color: #fff; /* Білий колір іконок */
+}
+
+.swiper-button-next {
+    right: 10px; /* Відступ справа */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Відступ зліва */
+}
+
+/* Пагінація */
+.swiper-pagination {
+    bottom: 10px; /* Розташування пагінації внизу */
+    text-align: center;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+    background-color: #333; /* Колір кульок пагінації */
+    opacity: 0.7; /* Напівпрозорі */
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1; /* Повністю видимі активні кульки */
+    background-color: #000; /* Темніший колір для активної кульки */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute; /* Забезпечує точне позиціонування */
+    top: 50%; /* Встановлює вертикальне вирівнювання */
+    transform: translateY(-50%); /* Центрує кнопки по середині вертикалі */
+    z-index: 10; /* Переконується, що кнопки зверху свайпера */
+}
+
+.swiper-button-next {
+    right: 20px; /* Відступ справа */
+}
+
+.swiper-button-prev {
+    left: 20px; /* Відступ зліва */
+}
+
+.swiper {
+    height: 500px; /* Установіть висоту свайпера, щоб його елементи вирівнювались */
+    position: relative; /* Для позиціонування дочірніх елементів */
+}
+
+
+.social-icons {
+    display: flex; /* Використання flexbox */
+    flex-direction: column; /* Вертикальне розташування лінків */
+    align-items: center; /* Центрування всієї групи по горизонталі */
+    gap: 20px; /* Відстань між лінками */
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: flex; /* Використання flexbox для кожного лінка */
+    flex-direction: row; /* Горизонтальне розташування іконки та тексту */
+    align-items: center; /* Центрування іконки та тексту по вертикалі */
+    text-decoration: none; /* Забрати підкреслення */
+    color: #000; /* Колір тексту */
+    font-size: 18px; /* Розмір тексту */
+    font-weight: 500; /* Напівжирний текст */
+    gap: 10px; /* Відстань між іконкою і текстом */
+    transition: color 0.3s ease; /* Плавний перехід кольору */
+}
+
+.social-icons a:hover {
+    color: #a30f13; /* Колір тексту при наведенні */
+}
+
+.social-icons a i {
+    font-size: 30px; /* Розмір іконки */
+    color: #555; /* Колір іконки */
+    transition: color 0.3s ease; /* Плавний перехід кольору */
+}
+
+.social-icons a:hover i {
+    color: #a30f13; /* Колір іконки при наведенні */
+}
+
+/* *************************************************************** */
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    #s1 .about-me {
+        flex-direction: column; /* Зміщуємо елементи в стовпчик на мобільних пристроях */
+        align-items: center; /* Вирівнюємо по центру */
+        text-align: center; /* Вирівнюємо текст по центру */
+    }
+
+    #s1 .about-me .image img {
+        width: 150px; /* Зменшуємо розмір зображення на мобільних пристроях */
+        height: 150px; /* Зменшуємо висоту зображення */
+        margin-bottom: 10px; /* Додаємо відступ знизу */
+    }
+
+    #s1 .about-me .details h3 {
+        font-size: 1.3rem; /* Зменшуємо розмір шрифта імені */
+    }
+
+    #s1 .about-me .details p {
+        font-size: 1rem; /* Зменшуємо розмір шрифта для зручності читання на мобільних пристроях */
+    }
+
+    #s2 .two-columns {
+        flex-direction: column; /* Колонки стають стовпцями на маленьких екранах */
+        text-align: center; /* Центруємо весь вміст в колонках */
+    }
+
+    #s2 .column {
+        margin-bottom: 20px; /* Додаємо відступ між колонками */
+    }
+
+    #s2 h2 {
+        text-align: center; /* Центруємо заголовок "Я вмію" */
+    }
+
+    #s2 .column ul {
+        text-align: center; /* Центруємо текст у списках */
+    }
+
+    /* Центрування заголовків "Hard Skills" та "Soft Skills" */
+    #s2 .column h3 {
+        text-align: center; /* Центруємо заголовки колонок */
+    }
+}
+
+@media (max-width: 480px) {
+    #s1 .about-me .details h3 {
+        font-size: 1.2rem; /* Зменшуємо шрифт ще більше на маленьких екранах */
+    }
+
+    #s1 .about-me .details p {
+        font-size: 0.95rem; /* Зменшуємо шрифт ще більше для маленьких екранів */
+    }
+
+    #s2 .column h3 {
+        font-size: 1.1rem; /* Зменшуємо розмір заголовків у колонках */
+        text-align: center; /* Центруємо заголовки на маленьких екранах */
+    }
+
+    #s2 .column ul li {
+        font-size: 0.9rem; /* Зменшуємо розмір шрифта в списках */
+    }
+
+    #s2 h2 {
+        text-align: center; /* Центруємо заголовок на маленьких екранах */
+    }
+
+    #s2 .column ul {
+        text-align: center; /* Центруємо текст у списках */
+    }
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        max-width: 90%; /* Скорочення ширини для мобільних */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 36px;
+        height: 36px;
+    }
+}
